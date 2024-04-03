@@ -1,10 +1,11 @@
 
 using Microsoft.EntityFrameworkCore;
+using PostgresHelloWorldApi.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<AppDbContext>(options =>
+builder.Services.AddDbContext<MyDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
             .LogTo(Console.WriteLine));
 
