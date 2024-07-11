@@ -4,10 +4,14 @@ This is a database first approach. The docker command below will spin up a postg
 
 `ef dbcontext scaffold --project PostgresHelloWorldApi/PostgresHelloWorldApi.csproj --startup-project PostgresHelloWorldApi/PostgresHelloWorldApi.csproj --configuration Debug Host=localhost;Port=5432;Database=TodoDB;Username=pguser;Password=password Npgsql.EntityFrameworkCore.PostgreSQL --data-annotations --context MyDbContext --context-dir Context --force --output-dir Models`
 
+
 `cd PostgresHelloWorldApi`
+
 
 `dotnet build .`
 
+
 `docker run --name TodoDb -e POSTGRES_DB=TodoDB  -e POSTGRES_USER=pguser -e POSTGRES_PASSWORD=password -p 5432:5432 -v pgdata:/var/lib/postgresql/data -d postgres`
+
 
 `dotnet run .`
