@@ -15,5 +15,3 @@ This is a database first approach. The docker command below will spin up a postg
 
 
 `dotnet run .`
-
-Testing with fork.
